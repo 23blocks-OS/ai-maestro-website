@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-W72WHGDW');</script>
+    <!-- End Google Tag Manager -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Governing AI Agents in a Company: Autonomy With Control</title>
+    <meta name="description" content="Guest post by Jaime Peláez: how he governs seven AI agents on a company helpdesk with AI Maestro, layered controls, locked configuration files and audit records.">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="author" content="Jaime Peláez">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://getaimaestro.com/blog/governing-ai-agents-in-a-company.html">
+    <meta property="og:title" content="Governing AI Agents in a Company: Autonomy With Control">
+    <meta property="og:description" content="Guest post by Jaime Peláez: how he governs seven AI agents on a company helpdesk with AI Maestro, layered controls, locked configuration files and audit records.">
+    <meta property="og:image" content="https://getaimaestro.com/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="AI Maestro - Orchestrate your AI coding agents">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="AI Maestro">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Governing AI Agents in a Company: Autonomy With Control">
+    <meta name="twitter:description" content="Guest post by Jaime Peláez: how he governs seven AI agents on a company helpdesk with AI Maestro, layered controls, locked configuration files and audit records.">
+    <meta name="twitter:image" content="https://getaimaestro.com/og-image.png">
+
+    <!-- Additional SEO -->
+    <meta name="keywords" content="AI Maestro, AI agent governance, Claude Code, permissions, sandbox, Entra ID, audit, helpdesk, guest post">
+    <link rel="canonical" href="https://getaimaestro.com/blog/governing-ai-agents-in-a-company.html">
+
+    <!-- Favicon & Icons -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#6366f1">
+
+    <!-- Theme Colors -->
+    <meta name="theme-color" content="#6366f1">
+    <meta name="msapplication-TileColor" content="#6366f1">
+    <meta name="msapplication-config" content="browserconfig.xml">
+
+    <!-- Apple Mobile Web App -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="AI Maestro">
+
+    <!-- Application Info -->
+    <meta name="application-name" content="AI Maestro">
+    <meta name="format-detection" content="telephone=no">
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Governing AI Agents in a Company: Autonomy With Control",
+      "datePublished": "2026-11-02",
+      "author": { "@type": "Person", "name": "Jaime Peláez" },
+      "publisher": { "@type": "Organization", "name": "23blocks" },
+      "url": "https://getaimaestro.com/blog/governing-ai-agents-in-a-company.html",
+      "isPartOf": { "@type": "SoftwareApplication", "name": "AI Maestro", "url": "https://getaimaestro.com/" }
+    }
+    </script>
+
+    
+    <!-- Typography: Syne (display) + DM Sans (body) + JetBrains Mono (code) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500;600&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        display: ['Syne', 'system-ui', 'sans-serif'],
+                        sans: ['DM Sans', 'system-ui', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        slate: {
+                            950: '#020617',
+                            900: '#0f172a',
+                            850: '#131c31',
+                            800: '#1e293b',
+                        },
+                        cyan: {
+                            400: '#22d3ee',
+                            500: '#00d4ff',
+                        },
+                        amber: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+
+    <!-- GSAP CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    
+    <style>
+        .prose-x p { margin-bottom: 1rem; }
+        .prose-x a { color: #22d3ee; }
+        .prose-x a:hover { color: #67e8f9; }
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+
+        body {
+            background-color: #0f172a;
+            color: #e2e8f0;
+        }
+
+        /* Noise texture overlay */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.03;
+            pointer-events: none;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            z-index: 9999;
+        }
+
+        /* Gradient text */
+        .gradient-text {
+            background: linear-gradient(135deg, #00d4ff 0%, #22d3ee 50%, #fbbf24 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Hamburger menu */
+        .hamburger span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: #e2e8f0;
+            transition: all 0.3s ease;
+        }
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+        .mobile-menu {
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            pointer-events: none;
+        }
+        .mobile-menu.active {
+            opacity: 1;
+            transform: translateY(0);
+            display: block !important;
+            pointer-events: auto;
+        }
+
+        /* Horizontal rule accent */
+        .hr-accent {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #00d4ff, transparent);
+        }
+
+        /* Typing cursor */
+        .typing-cursor {
+            display: inline-block;
+            width: 3px;
+            height: 1em;
+            background-color: #00d4ff;
+            margin-left: 4px;
+            animation: blink 1s infinite;
+            vertical-align: text-bottom;
+        }
+
+        @keyframes blink {
+            0%, 49% { opacity: 1; }
+            50%, 100% { opacity: 0; }
+        }
+    </style>
+
+    <link rel="alternate" type="application/atom+xml" title="AI Maestro Blog" href="https://getaimaestro.com/blog/feed.xml">
+</head>
+<body class="font-sans antialiased">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W72WHGDW"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    
+    <!-- Copy for AI Button -->
+    <button
+        onclick="copyForAI()"
+        class="fixed bottom-6 right-6 z-50 flex items-center gap-2 px-4 py-2 bg-slate-800 border border-slate-700 text-cyan-400 font-mono text-sm rounded hover:bg-slate-700 hover:border-cyan-500/50 transition-all duration-200"
+        title="Copy this page for AI assistants">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+        </svg>
+        COPY FOR AI
+    </button>
+
+
+    <!-- Navigation (same as index.html) -->
+    <nav class="sticky top-0 bg-slate-900/95 backdrop-blur-lg border-b border-slate-800 z-[100]">
+        <div class="max-w-7xl mx-auto px-4 md:px-8">
+            <div class="flex justify-between items-center py-4">
+                <a href="/" class="flex items-center gap-3 text-white no-underline hover:opacity-80 transition-opacity duration-200">
+                    <img src="/logo-constellation.svg" alt="AI Maestro" class="w-8 h-8 md:w-10 md:h-10">
+                    <span class="font-display font-bold text-lg md:text-xl tracking-tight">AI MAESTRO</span>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex gap-8 items-center">
+                    <a href="/#personas" class="text-slate-400 no-underline font-medium hover:text-cyan-400 transition-colors duration-200 text-sm tracking-wide">WHO IT'S FOR</a>
+                    <a href="/#features" class="text-slate-400 no-underline font-medium hover:text-cyan-400 transition-colors duration-200 text-sm tracking-wide">FEATURES</a>
+                    <a href="/ecosystem.html" class="text-slate-400 no-underline font-medium hover:text-cyan-400 transition-colors duration-200 text-sm tracking-wide">ECOSYSTEM</a>
+                    <a href="https://aimaestro.sh/skills.html" class="text-slate-400 no-underline font-medium hover:text-cyan-400 transition-colors duration-200 text-sm tracking-wide">SKILLS</a>
+                    <a href="https://aimaestro.sh/protocols.html" class="text-slate-400 no-underline font-medium hover:text-cyan-400 transition-colors duration-200 text-sm tracking-wide">PROTOCOLS</a>
+                    <a href="/blog/" class="text-slate-400 no-underline font-medium hover:text-cyan-400 transition-colors duration-200 text-sm tracking-wide">BLOG</a>
+                    <a href="https://aimaestro.sh/" class="text-slate-400 no-underline font-medium hover:text-cyan-400 transition-colors duration-200 text-sm tracking-wide">GET STARTED</a>
+                    <a href="https://github.com/23blocks-OS/ai-maestro" target="_blank" class="text-slate-400 no-underline hover:text-cyan-400 transition-colors duration-200" title="View on GitHub">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/></svg>
+                    </a>
+                    <a href="https://github.com/23blocks-OS/ai-maestro#readme" class="inline-flex items-center gap-2 px-5 py-2.5 rounded bg-cyan-500 text-slate-900 font-bold text-sm tracking-wide hover:bg-cyan-400 transition-all duration-200" target="_blank">
+                        START FREE
+                    </a>
+                </div>
+
+                <!-- Mobile Navigation -->
+                <div class="flex md:hidden items-center gap-3">
+                    <a href="https://github.com/23blocks-OS/ai-maestro#readme" class="px-3 py-2 rounded bg-cyan-500 text-slate-900 font-bold text-xs tracking-wide" target="_blank">START</a>
+                    <button class="hamburger bg-transparent border-0 cursor-pointer p-2 flex flex-col gap-1.5 z-[1001]" id="hamburger" aria-label="Toggle menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div class="mobile-menu hidden absolute top-full left-0 right-0 bg-slate-900 border-b border-slate-800 py-4" id="mobile-menu">
+                <a href="/#personas" class="block px-8 py-3 text-slate-300 no-underline font-medium hover:text-cyan-400 hover:bg-slate-800/50">Who It's For</a>
+                <a href="/#features" class="block px-8 py-3 text-slate-300 no-underline font-medium hover:text-cyan-400 hover:bg-slate-800/50">Features</a>
+                <a href="/ecosystem.html" class="block px-8 py-3 text-slate-300 no-underline font-medium hover:text-cyan-400 hover:bg-slate-800/50">Ecosystem</a>
+                <a href="https://aimaestro.sh/skills.html" class="block px-8 py-3 text-slate-300 no-underline font-medium hover:text-cyan-400 hover:bg-slate-800/50">Skills</a>
+                <a href="https://aimaestro.sh/protocols.html" class="block px-8 py-3 text-slate-300 no-underline font-medium hover:text-cyan-400 hover:bg-slate-800/50">Protocols</a>
+                <a href="/blog/" class="block px-8 py-3 text-slate-300 no-underline font-medium hover:text-cyan-400 hover:bg-slate-800/50">Blog</a>
+                <a href="https://aimaestro.sh/" class="block px-8 py-3 text-slate-300 no-underline font-medium hover:text-cyan-400 hover:bg-slate-800/50">Get Started</a>
+                <a href="https://github.com/23blocks-OS/ai-maestro" target="_blank" class="flex items-center gap-3 px-8 py-3 text-slate-300 no-underline font-medium hover:text-cyan-400 hover:bg-slate-800/50">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/></svg>
+                    GitHub
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
+
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            });
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
+                hamburger.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            }
+        });
+    </script>
+
+
+
+    <article class="max-w-3xl mx-auto px-4 md:px-8 pt-12 pb-16 prose-x text-slate-300 leading-relaxed">
+        <p class="font-mono text-xs tracking-widest text-cyan-400 mb-4"><a href="/blog/" class="no-underline">BLOG</a> &nbsp;/&nbsp; GUEST POST &nbsp;/&nbsp; GOVERNANCE</p>
+        <h1 class="font-display text-3xl md:text-5xl font-extrabold tracking-tight leading-tight text-white mb-5">Governing AI Agents in a Company: Autonomy With Control</h1>
+        <p class="text-sm text-slate-500 mb-6">Guest post by Jaime Pel&aacute;ez &middot; November 2, 2026</p>
+        <div class="text-sm text-slate-400 bg-slate-900/80 border border-slate-700 rounded-xl p-5 mb-10">
+            <p class="mb-2"><strong class="text-slate-200">About the author.</strong> Jaime Pel&aacute;ez runs a team of seven AI agents on the helpdesk of a healthcare company in Latin America. He coordinates them with AI Maestro and approves their actions himself. He wrote this in Spanish. We translated and shortened it.</p>
+            <p class="mb-0"><strong class="text-slate-200">Editor&rsquo;s note.</strong> Most controls in this post are Jaime&rsquo;s own setup. He built them from Claude Code settings, macOS features and his company&rsquo;s directory. AI Maestro supplies the permission levels, approval cards, status and messaging. The post says which part comes from where.</p>
+        </div>
+
+        <p>A helpdesk with seven AI agents can work on tickets, reset passwords, watch systems and write procedures all day and all night. But these agents reach company systems, run commands and make decisions. Any user with that much access needs strong governance, and an agent is no different.</p>
+        <p>The productivity gain is already clear to me. What I had to work out was how to govern the agents, so that their autonomy is safe and I can audit it.</p>
+        <p>This post describes the model that I run in production with AI Maestro. My argument is this: no single control is enough. Safe autonomy comes from several layers of control, a fixed process for changes, and a record of every action. AI Maestro supplies one of those layers. The others come from the agent program, the operating system and the company&rsquo;s identity service.</p>
+
+        <h2 class="font-display text-2xl md:text-3xl font-bold text-white mt-10 mb-4">The Problem: Useful Autonomy Without Total Autonomy</h2>
+        <p>Often nobody watches an agent&rsquo;s terminal. If the agent needs approval and nobody answers, it waits. It does not tell anyone, and it can wait forever.</p>
+        <p>One answer is total autonomy: let the agent do everything without asking. This works, but then the agent can do anything that the operating system allows. It can read data that is not its business, change its own settings or run admin commands.</p>
+        <p>The goal is governed autonomy. The agent works alone inside its job. When it tries something outside its job, a control stops the action and records it. Then a person must approve it.</p>
+
+        <h2 class="font-display text-2xl md:text-3xl font-bold text-white mt-10 mb-4">What AI Maestro Contributes</h2>
+        <p>AI Maestro is an open-source tool that runs many AI coding agents from one dashboard (23blocks, 2026). For governance, it gives me three things.</p>
+        <p>First, each agent has a permission level. There are five levels:</p>
+        <ul class="space-y-2 list-disc pl-6 marker:text-cyan-400">
+            <li>supervised: the agent asks before every file edit and command;</li>
+            <li>plan only: the agent reads and plans, but changes nothing;</li>
+            <li>trust edits: the agent edits files freely, but asks before commands;</li>
+            <li>smart auto: the agent asks only for risky actions;</li>
+            <li>full autonomy: the agent never asks.</li>
+        </ul>
+        <p>You choose the level when you create or wake the agent. You do not change it in the middle of a session.</p>
+        <p>Second, AI Maestro shows approval cards and status. When an agent asks for permission, the question appears as a card on the dashboard or on a phone. The agent&rsquo;s status changes to &ldquo;Needs you&rdquo;. So I can see which agent waits for me. Claude Code agents get both the cards and this status. Codex agents get the cards but not the status.</p>
+        <p>Third, agents send each other signed messages with AMP, the Agent Messaging Protocol. An agent can report something unusual to the coordinator. The coordinator can send instructions to the whole team.</p>
+        <p>My models run through the company&rsquo;s Azure subscription. I use Claude in Microsoft Foundry with the &ldquo;hosted on Azure&rdquo; option. With that option, prompts and answers stay in Azure. Only usage data and content flagged by safety systems go to Anthropic (Anthropic, 2026a). AI Maestro itself sends no analytics and does not contact any outside service (23blocks, 2026).</p>
+
+        <h2 class="font-display text-2xl md:text-3xl font-bold text-white mt-10 mb-4">Defence in Layers</h2>
+        <p>Each control has a weak point. A deny rule blocks what it recognises, but not what nobody expected. A sandbox limits the operating system, but it knows nothing about the business. An instruction guides the agent, but the agent can read it in an unexpected way.</p>
+        <p>So I use six layers. The first layer is the strongest, because it works even if the agent ignores its instructions. The last layer is the weakest, because it works only if the agent obeys. If one layer fails, the next layer stops the action.</p>
+        <ol class="space-y-2 list-decimal pl-6 marker:text-cyan-400">
+            <li>Corporate identity. Each agent has its own account in Microsoft Entra ID, the company&rsquo;s identity service. The account has the least privilege it needs and conditional access. Sensitive rights need temporary elevation through Privileged Identity Management (Microsoft, 2026).</li>
+            <li>Operating-system sandbox. The Claude Code sandbox uses Seatbelt on macOS. It limits the folders an agent can write to and the domains it can reach (Anthropic, 2026b).</li>
+            <li>Separate credentials. Each agent has its own credentials for outside systems, kept in the keychain. On one operating-system user, this is a convention and not a wall. The section on limits explains why.</li>
+            <li>Supervised mode. AI Maestro runs each agent in supervised mode, with a list of routine actions that the agent may do without asking.</li>
+            <li>Common deny rules. Each agent&rsquo;s Claude Code settings contain the same list of forbidden actions.</li>
+            <li>Scope hook. A hook for each agent checks every action against the agent&rsquo;s folders and domains.</li>
+        </ol>
+        <p>Below all six layers are the agent&rsquo;s own instructions, in its <code class="font-mono text-sm text-cyan-400">CLAUDE.md</code> file. They describe its role, its scope and what it must not do. They guide the agent, but they do not lock anything.</p>
+
+        <h2 class="font-display text-2xl md:text-3xl font-bold text-white mt-10 mb-4">Supervision Without Losing Productivity</h2>
+        <p>Supervised mode works only if each role has a good allow list. The service-desk agent can read tickets and update their status without asking. The identity agent can check accounts and reset passwords.</p>
+        <p>Actions that are not on the list stop and wait for approval. Examples are an unusual query, a change in another team&rsquo;s system and an admin operation. In my experience, most routine actions run without a person. Only the unusual actions stop.</p>
+        <p>Two habits keep the list correct:</p>
+        <ul class="space-y-2 list-disc pl-6 marker:text-cyan-400">
+            <li>After the first week, review the actions that were stopped. Add the routine, legitimate actions to the list. The list then follows real use, not guesses.</li>
+            <li>Every week, review the blocked actions. Find false alarms and correct the list.</li>
+        </ul>
+
+        <h2 class="font-display text-2xl md:text-3xl font-bold text-white mt-10 mb-4">Actions That No Agent May Do</h2>
+        <p>Six of the seven agents share one deny list. The exception is the coordinator. The coordinator must edit the other agents&rsquo; settings, and it can do so only with my fingerprint.</p>
+        <p>No other agent may do these actions:</p>
+        <ul class="space-y-2 list-disc pl-6 marker:text-cyan-400">
+            <li>edit its own <code class="font-mono text-sm text-cyan-400">CLAUDE.md</code>, its <code class="font-mono text-sm text-cyan-400">.claude/</code> folder or the global <code class="font-mono text-sm text-cyan-400">~/.claude/</code> folder;</li>
+            <li>open another agent&rsquo;s folder or the secure archive;</li>
+            <li>read credential files, such as <code class="font-mono text-sm text-cyan-400">.env</code>, <code class="font-mono text-sm text-cyan-400">.pem</code> and <code class="font-mono text-sm text-cyan-400">.key</code> files;</li>
+            <li>run <code class="font-mono text-sm text-cyan-400">sudo</code>, <code class="font-mono text-sm text-cyan-400">chflags</code> or <code class="font-mono text-sm text-cyan-400">git push --force</code>.</li>
+        </ul>
+        <p>Deny rules match patterns. A rule against reading <code class="font-mono text-sm text-cyan-400">.env</code> files does not stop an agent that writes a script to read them. That is why deny rules are one layer and not the full answer.</p>
+
+        <h3 class="font-display text-xl font-bold text-white mt-8 mb-3">The Scope Hook</h3>
+        <p>The scope hook sets the limits of each agent. Before every action, it checks that the agent stays inside its folders and allowed domains. If the agent goes outside, the hook blocks the action. It also sends an AMP message to the coordinator and records the attempt.</p>
+
+        <h2 class="font-display text-2xl md:text-3xl font-bold text-white mt-10 mb-4">Changes to the Rules Need a Fingerprint</h2>
+        <p>The files that set each agent&rsquo;s role and permissions are the most sensitive part of the model. If an agent can edit its own instructions, the other controls do not matter.</p>
+        <p>So the operating system locks these files. I set the system-immutable flag (<code class="font-mono text-sm text-cyan-400">chflags schg</code>) on sixteen files. They are each agent&rsquo;s <code class="font-mono text-sm text-cyan-400">CLAUDE.md</code> and settings, plus two global files. To unlock them, I must confirm with Touch ID.</p>
+        <p>Every change follows the same steps:</p>
+        <ol class="space-y-2 list-decimal pl-6 marker:text-cyan-400">
+            <li>I ask for the change.</li>
+            <li>The coordinator explains what will change.</li>
+            <li>I confirm with my fingerprint.</li>
+            <li>The coordinator edits the file.</li>
+            <li>The system locks the file again and records its new SHA-256 hash.</li>
+        </ol>
+        <p>Every week, a review compares each locked file with its recorded hash. If a file changed without an unlock record, the review finds it.</p>
+
+        <h2 class="font-display text-2xl md:text-3xl font-bold text-white mt-10 mb-4">Audit Records</h2>
+        <p>If you have no record of an agent&rsquo;s actions, you cannot answer for that agent. I built three records for this deployment. AI Maestro has no central audit log.</p>
+        <ul class="space-y-2 list-disc pl-6 marker:text-cyan-400">
+            <li>The action log keeps entries for one year. Each entry has the agent, the time, the tool, the command and the result (allowed or blocked). It has no sensitive content. The agents cannot change or delete it.</li>
+            <li>The transcripts keep each full working session for 90 days. With them, I can see the context of any action.</li>
+            <li>The weekly summary lists blocked attempts, unexpected changes and configuration changes. I keep these summaries.</li>
+        </ul>
+        <p>The AMP messages between agents also stay on disk.</p>
+
+        <h2 class="font-display text-2xl md:text-3xl font-bold text-white mt-10 mb-4">Weekly Review</h2>
+        <p>Controls get weaker over time. A restart can bring back an old configuration. An emergency change can stay in place after the emergency. So a local job checks the setup every week. It runs with launchd on the Mac and never in the cloud.</p>
+        <p>The job checks these items:</p>
+        <ul class="space-y-2 list-disc pl-6 marker:text-cyan-400">
+            <li>the permission level of each agent in AI Maestro;</li>
+            <li>the hash of each locked file;</li>
+            <li>new agents that have no control profile;</li>
+            <li>the blocked attempts of the week, which can show a wrong allow list.</li>
+        </ul>
+        <p>If the job finds a critical problem, it tells the coordinator at once. The coordinator then sends a report to me.</p>
+
+        <h2 class="font-display text-2xl md:text-3xl font-bold text-white mt-10 mb-4">Adding a New Agent</h2>
+        <p>A new agent gets its limits before it starts, not later. I use these steps:</p>
+        <ol class="space-y-2 list-decimal pl-6 marker:text-cyan-400">
+            <li>Write the agent&rsquo;s role, the systems it needs and what is outside its scope.</li>
+            <li>Ask IT for an Entra ID account with least privilege.</li>
+            <li>Add the common deny rules.</li>
+            <li>Add a scope hook with the agent&rsquo;s own folders and domains.</li>
+            <li>Lock the agent&rsquo;s files and record their first hashes.</li>
+            <li>Start the agent in AI Maestro in supervised mode.</li>
+        </ol>
+        <p>Do the last step only after the first five steps are complete.</p>
+
+        <h2 class="font-display text-2xl md:text-3xl font-bold text-white mt-10 mb-4">A Day With the Identity Agent</h2>
+        <p>The identity agent manages user accounts in Active Directory and Entra ID. A typical day shows how the layers work together.</p>
+        <ul class="space-y-2 list-disc pl-6 marker:text-cyan-400">
+            <li>A user asks for a password reset. This is the agent&rsquo;s job, so I approve it.</li>
+            <li>The agent tries to read another agent&rsquo;s folder. The scope hook blocks it and tells the coordinator.</li>
+            <li>The agent tries a change in Entra ID outside its role. Entra ID refuses with error 403, because the agent&rsquo;s account does not have that right.</li>
+            <li>The agent tries to edit its own instructions. The deny rule stops it, and the file lock stops it again.</li>
+        </ul>
+        <p>The action log records each of these events: what the agent tried, when, and the result.</p>
+        <p>No single layer covers all of these cases. The corporate identity cannot see a local folder. The scope hook cannot see a remote change in Entra ID. The layers complete each other.</p>
+
+        <h2 class="font-display text-2xl md:text-3xl font-bold text-white mt-10 mb-4">Limits of This Model</h2>
+        <p>A mature governance model is honest about its limits. Mine has four.</p>
+        <ul class="space-y-2 list-disc pl-6 marker:text-cyan-400">
+            <li>Deny rules block only what they recognise. So the sandbox and the corporate identity are required, not optional.</li>
+            <li>Agents that share an operating-system user share access. On one host, an agent can read the other agents&rsquo; keychain items, vault and messaging keys (23blocks, 2026). A valid AMP signature proves which key signed a message, not which process sent it. The strong fix is one operating-system user per agent, or containers. AI Maestro has a Docker backend for containers. Both options add work.</li>
+            <li>Touch ID does not show which process asks for it. My rule: approve with a fingerprint only a change that the coordinator just asked for.</li>
+            <li>Supervised mode does not prevent bad approvals. Approval is not review. If I approve out of habit, the lower layers still limit the damage.</li>
+        </ul>
+
+        <h2 class="font-display text-2xl md:text-3xl font-bold text-white mt-10 mb-4">Conclusions</h2>
+        <p>Autonomy is not the problem. Autonomy without governance is the problem. Safe autonomy needs several layers of control, a fixed process for changes, and a record of every action. AI Maestro gives you permission levels, approval cards, status and signed messages. The other layers come from the agent program, the operating system and the company&rsquo;s identity service.</p>
+        <p>The main points are these:</p>
+        <ul class="space-y-2 list-disc pl-6 marker:text-cyan-400">
+            <li>Give each agent its own corporate identity with least privilege. You can then revoke one agent without touching the others.</li>
+            <li>Start each agent in supervised mode, and grow its allow list from real use.</li>
+            <li>Lock the files that define each agent, and require a person to unlock them.</li>
+            <li>Keep an action log that the agents cannot change, and review it every week.</li>
+            <li>Remember that agents on one host can read each other&rsquo;s secrets. Use containers or separate users when that matters.</li>
+        </ul>
+        <p>With these controls, you can grow from 7 agents to 15 without doubling the risk. Every company that runs AI agents should be able to answer one question: what did each of my agents do today, and how do I know it did nothing wrong?</p>
+        <p>For the infrastructure side of the same team, see <a href="/blog/ai-maestro-on-azure.html">AI Maestro on Azure</a>.</p>
+
+        <h2 class="font-display text-2xl md:text-3xl font-bold text-white mt-10 mb-4">References</h2>
+        <div class="text-sm text-slate-400 space-y-3">
+            <p class="pl-8 -indent-8">23blocks. (2026). <em>AI Maestro</em> [Computer software]. GitHub. <a href="https://github.com/23blocks-OS/ai-maestro">https://github.com/23blocks-OS/ai-maestro</a></p>
+            <p class="pl-8 -indent-8">Anthropic. (2026a). <em>Claude in Microsoft Foundry</em>. <a href="https://platform.claude.com/docs/en/build-with-claude/claude-in-microsoft-foundry">https://platform.claude.com/docs/en/build-with-claude/claude-in-microsoft-foundry</a></p>
+            <p class="pl-8 -indent-8">Anthropic. (2026b). <em>Configure the sandboxed Bash tool</em>. Claude Code Docs. <a href="https://code.claude.com/docs/en/sandboxing">https://code.claude.com/docs/en/sandboxing</a></p>
+            <p class="pl-8 -indent-8">Microsoft. (2026). <em>What is Privileged Identity Management?</em> Microsoft Learn. <a href="https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-configure">https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-configure</a></p>
+        </div>
+
+        <p class="text-slate-500 text-sm mt-10">Claude and Claude Code are trademarks of Anthropic. Azure, Microsoft Foundry and Entra ID are trademarks of Microsoft. macOS and Touch ID are trademarks of Apple. AI Maestro is not affiliated with or endorsed by them.</p>
+    </article>
+    <footer class="py-16 pb-8 bg-slate-950 border-t border-slate-800 px-4 md:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <img src="/logo-constellation.svg" alt="AI Maestro" class="w-8 h-8">
+                        <span class="font-display font-bold text-lg text-white">AI MAESTRO</span>
+                    </div>
+                    <p class="text-slate-400 text-sm">The future of work is here. Orchestrate multiple AI coding agents from one dashboard.</p>
+                </div>
+                <div>
+                    <h3 class="font-mono text-xs text-slate-500 tracking-widest mb-4">LINKS</h3>
+                    <a href="/blog/" class="block text-slate-400 no-underline mb-2 hover:text-cyan-400 transition-colors text-sm">Blog</a>
+                    <a href="https://github.com/23blocks-OS/ai-maestro" class="block text-slate-400 no-underline mb-2 hover:text-cyan-400 transition-colors text-sm">GitHub</a>
+                    <a href="https://github.com/23blocks-OS/ai-maestro/issues" class="block text-slate-400 no-underline mb-2 hover:text-cyan-400 transition-colors text-sm">Issues</a>
+                    <a href="https://github.com/23blocks-OS/ai-maestro/blob/main/CONTRIBUTING.md" class="block text-slate-400 no-underline mb-2 hover:text-cyan-400 transition-colors text-sm">Contributing</a>
+                    <a href="https://github.com/23blocks-OS/ai-maestro/blob/main/LICENSE" class="block text-slate-400 no-underline mb-2 hover:text-cyan-400 transition-colors text-sm">License (MIT)</a>
+                </div>
+                <div>
+                    <h3 class="font-mono text-xs text-slate-500 tracking-widest mb-4">BUILT BY</h3>
+                    <p class="text-slate-400 text-sm mb-2">
+                        <a href="https://x.com/jkpelaez" target="_blank" class="text-white hover:text-cyan-400 transition-colors">Juan Peláez</a> @ <a href="https://23blocks.com" target="_blank" class="text-white hover:text-cyan-400 transition-colors">23blocks</a>
+                    </p>
+                    <p class="text-slate-500 text-xs">Made with <span class="text-red-500">♥</span> in Boulder, Colorado</p>
+                    <p class="text-slate-500 text-xs mt-1">Coded with Claude</p>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-slate-800 text-center">
+                <p class="text-slate-500 text-sm">© 2025-2026 Juan Peláez / 23blocks. MIT License.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Copy for AI functionality -->
+    <script src="/copy-for-ai.js"></script>
+</body>
+</html>
