@@ -361,12 +361,12 @@
         <p>Actions that are not on the list stop and wait for approval. Examples are an unusual query, a change in another team&rsquo;s system and an admin operation. In my experience, most routine actions run without a person. Only the unusual actions stop.</p>
         <p>Two habits keep the list correct:</p>
         <ul class="space-y-2 list-disc pl-6 marker:text-cyan-400">
-            <li>After the first week, review the actions that were stopped. Add the routine, legitimate actions to the list. The list then follows real use, not guesses.</li>
+            <li>After the first week, review the actions that the controls stopped. Add the routine, legitimate actions to the list. The list then follows real use, not guesses.</li>
             <li>Every week, review the blocked actions. Find false alarms and correct the list.</li>
         </ul>
 
         <h2 class="font-display text-2xl md:text-3xl font-bold text-white mt-10 mb-4">Actions That No Agent May Do</h2>
-        <p>Six of the seven agents share one deny list. The exception is the coordinator. The coordinator must edit the other agents&rsquo; settings, and it can do so only with my fingerprint.</p>
+        <p>Six of the seven agents share the same deny rules. The exception is the coordinator. The coordinator must edit the other agents&rsquo; settings, and it can do so only with my fingerprint.</p>
         <p>No other agent may do these actions:</p>
         <ul class="space-y-2 list-disc pl-6 marker:text-cyan-400">
             <li>edit its own <code class="font-mono text-sm text-cyan-400">CLAUDE.md</code>, its <code class="font-mono text-sm text-cyan-400">.claude/</code> folder or the global <code class="font-mono text-sm text-cyan-400">~/.claude/</code> folder;</li>
@@ -413,7 +413,7 @@
         <p>If the job finds a critical problem, it tells the coordinator at once. The coordinator then sends a report to me.</p>
 
         <h2 class="font-display text-2xl md:text-3xl font-bold text-white mt-10 mb-4">Adding a New Agent</h2>
-        <p>A new agent gets its limits before it starts, not later. I use these steps:</p>
+        <p>A new agent gets its limits before it starts, not later. I use these steps. Do not start the agent before you complete steps 1 to 5.</p>
         <ol class="space-y-2 list-decimal pl-6 marker:text-cyan-400">
             <li>Write the agent&rsquo;s role, the systems it needs and what is outside its scope.</li>
             <li>Ask IT for an Entra ID account with least privilege.</li>
@@ -422,7 +422,6 @@
             <li>Lock the agent&rsquo;s files and record their first hashes.</li>
             <li>Start the agent in AI Maestro in supervised mode.</li>
         </ol>
-        <p>Do the last step only after the first five steps are complete.</p>
 
         <h2 class="font-display text-2xl md:text-3xl font-bold text-white mt-10 mb-4">A Day With the Identity Agent</h2>
         <p>The identity agent manages user accounts in Active Directory and Entra ID. A typical day shows how the layers work together.</p>

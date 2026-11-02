@@ -325,7 +325,7 @@
 
         <h2 class="font-display text-2xl md:text-3xl font-bold text-white mt-10 mb-4">What AI Maestro Does and Does Not Do</h2>
         <p>AI Maestro gives each agent its own folder, session and settings. From the dashboard you start and stop agents, watch their terminals and answer their questions. The dashboard also shows the status of each agent: working, needs you, ready or offline.</p>
-        <p>Agents send messages to each other with AMP, the Agent Messaging Protocol. Each agent has its own inbox, and every message is signed with an Ed25519 key.</p>
+        <p>Agents send messages to each other with AMP, the Agent Messaging Protocol. Each agent has its own inbox. The sender signs every message with an Ed25519 key.</p>
         <p>AI Maestro does not lock you to one vendor. Claude Code, Codex and Grok Build have full support: launch, chat history, status and approval cards. GitHub Copilot CLI also launches from AI Maestro, with chat history and approval cards. Any other terminal agent runs in the terminal tab (23blocks, 2026).</p>
         <p>AI Maestro does not connect agents to company systems. MCP servers do that job. MCP is the Model Context Protocol, an open standard for giving AI agents tools. I explain them below.</p>
 
@@ -346,10 +346,10 @@
 
         <h3 class="font-display text-xl font-bold text-white mt-8 mb-3">The Network Is the Boundary</h3>
         <p>AI Maestro has no login screen. This is a design choice. It listens on port 23000 and trusts anyone who can reach it (23blocks, 2026). So the network must keep strangers out.</p>
-        <p>On Azure, people reach the dashboard only through the company network: a VPN gateway, ExpressRoute or Tailscale. Do not give the VM a public IP address.</p>
+        <p>On Azure, people reach the dashboard only through the company network: a VPN (virtual private network) gateway, ExpressRoute or Tailscale. Do not give the VM a public IP address.</p>
 
         <h3 class="font-display text-xl font-bold text-white mt-8 mb-3">Outgoing Traffic</h3>
-        <p>All outgoing traffic passes through Azure Firewall. Firewall rules list the domain names the VM may reach, and everything else is blocked. The Basic tier filters web (HTTP and HTTPS) and SQL traffic by domain name. To filter other protocols by name, you need the Standard tier (Microsoft, 2026b).</p>
+        <p>All outgoing traffic passes through Azure Firewall. Firewall rules list the domain names the VM may reach. The firewall blocks everything else. The Basic tier filters web (HTTP and HTTPS) and SQL traffic by domain name. To filter other protocols by name, you need the Standard tier (Microsoft, 2026b).</p>
 
         <h2 class="font-display text-2xl md:text-3xl font-bold text-white mt-10 mb-4">Models in Microsoft Foundry Without API Keys</h2>
         <p>Claude Code can use Microsoft Foundry directly. You set <code class="font-mono text-sm text-cyan-400">CLAUDE_CODE_USE_FOUNDRY=1</code> and the name of your Foundry resource. If you set no API key, Claude Code signs in through Microsoft Entra ID, Azure&rsquo;s identity service. On a VM it uses the VM&rsquo;s managed identity (Anthropic, 2026b). You give that identity the Foundry User or Cognitive Services User role, and no key exists anywhere.</p>
@@ -373,7 +373,7 @@
             <li>Entra ID: check a user, reset a password, read groups.</li>
             <li>Dynatrace: open problems and availability.</li>
         </ul>
-        <p>For Kubernetes, Microsoft publishes an open-source MCP server for Azure Kubernetes Service (Microsoft, n.d.). It has three access levels: read, read-write and admin. The default is read. I would keep it there unless one agent really needs to restart pods.</p>
+        <p>For Kubernetes, Microsoft publishes an open-source MCP server for Azure Kubernetes Service (AKS), Microsoft&rsquo;s managed Kubernetes (Microsoft, n.d.). It has three access levels: read, read-write and admin. The default is read. I would keep it there unless one agent really needs to restart pods.</p>
         <p>Each MCP server has its own identity, so the MCP server is where isolation really happens. A helpdesk agent cannot change the cluster because none of its tools reach the cluster.</p>
 
         <h2 class="font-display text-2xl md:text-3xl font-bold text-white mt-10 mb-4">Where Identity Isolates Agents and Where It Does Not</h2>
@@ -393,9 +393,9 @@
             <li>The coordinator gives a task to an agent. The agent does it and reports back.</li>
             <li>The documentation agent needs ticket details. It asks the service-desk agent, which gets them from ServiceNow through its MCP server.</li>
             <li>The monitoring agent sees a problem in Dynatrace. It tells the coordinator, who decides whether to involve someone for the cluster.</li>
-            <li>The documentation agent writes a procedure and sends it to a technical agent to check before it is published.</li>
+            <li>The documentation agent writes a procedure and sends it to a technical agent. The technical agent checks it before the team publishes it.</li>
         </ul>
-        <p>Azure SRE Agent is Microsoft&rsquo;s managed agent for site reliability work, generally available since March 2026 (Microsoft, 2026a). It can sit next to this team for Kubernetes and Azure Monitor work. It is a managed Azure service, not a terminal program. AI Maestro does not start it or send it messages. A person or an MCP server connects the two.</p>
+        <p>Azure SRE Agent is Microsoft&rsquo;s managed agent for site reliability engineering (SRE), generally available since March 2026 (Microsoft, 2026a). It can sit next to this team for Kubernetes and Azure Monitor work. It is a managed Azure service, not a terminal program. AI Maestro does not start it or send it messages. A person or an MCP server connects the two.</p>
 
         <h2 class="font-display text-2xl md:text-3xl font-bold text-white mt-10 mb-4">The Dashboard</h2>
         <p>The team lead works from the AI Maestro dashboard, on a computer or a phone. For each agent, the dashboard shows its status and a live terminal.</p>
