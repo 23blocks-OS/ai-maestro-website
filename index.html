@@ -108,7 +108,7 @@
           "Dashboard for Claude Code, Codex and Grok Build agents, plus any terminal agent",
           "Real-time terminals and a chat view, on desktop and phone",
           "Agent Messaging Protocol (AMP): signed messages between agents",
-          "Agent Identity (AID), Agent Actions (AAP) and Agent Files (AFP) protocols",
+          "Agent Identity (AID), Agent Actions (AAP), Agent Files (AFP) and Agent Device (ADP) protocols",
           "Peer mesh across hosts, with transfer of agents between machines",
           "Persistent memory with an entity graph, and a code graph",
           "Secrets vault: agents use a credential by name without seeing it",
@@ -1010,7 +1010,7 @@
                             <span class="text-2xl">🔗</span>
                         </div>
                         <h4 class="font-bold text-white text-lg mb-2 group-hover:text-amber-400 transition-colors">Open Protocols</h4>
-                        <p class="text-slate-400 text-sm leading-relaxed">AMP for messages, AID for identity, AAP for actions and AFP for files. Open standards, each usable on its own.</p>
+                        <p class="text-slate-400 text-sm leading-relaxed">AMP for messages, AID for identity, AAP for actions, AFP for files and ADP for devices. Open standards, each usable on its own.</p>
                     </a>
                     <a href="https://aimaestro.sh/skills.html" class="group relative bg-slate-900/80 border border-slate-700 rounded-xl p-6 hover:border-amber-500/50 hover:bg-slate-900 transition-all duration-300 no-underline overflow-hidden">
                         <div class="w-12 h-12 rounded-lg bg-amber-500/10 border border-amber-500/30 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
@@ -1448,16 +1448,17 @@
                 <!-- FAQ 8 - Open Protocols -->
                 <details class="group bg-slate-900 border border-slate-700 rounded-xl overflow-hidden">
                     <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
-                        <h3 class="font-display text-lg font-bold text-white pr-4">What are AMP, AID, AAP and AFP?</h3>
+                        <h3 class="font-display text-lg font-bold text-white pr-4">What are AMP, AID, AAP, AFP and ADP?</h3>
                         <span class="text-cyan-400 text-2xl group-open:rotate-45 transition-transform">+</span>
                     </summary>
                     <div class="px-6 pb-6 text-slate-400">
-                        <p>Four open protocols that power the AI Maestro ecosystem:</p>
+                        <p>Five open protocols that power the AI Maestro ecosystem:</p>
                         <ul class="mt-3 space-y-2 list-disc list-inside">
                             <li><a href="https://agentmessaging.org" target="_blank" class="text-cyan-400 hover:underline">AMP</a> (Agent Messaging Protocol) — email-like communication between agents with cryptographic signatures and push notifications.</li>
                             <li><a href="https://agentids.org" target="_blank" class="text-green-400 hover:underline">AID</a> (Agent Identity) — portable cryptographic identity with Ed25519 keys and OAuth 2.0 tokens. Every agent gets a verifiable identity.</li>
                             <li><a href="https://agentactions.org" target="_blank" class="text-emerald-400 hover:underline">AAP</a> (Agent Actions Protocol) — how a click or form submit in an agent-drawn page reaches the agent as a structured action.</li>
                             <li><a href="https://github.com/agentmessaging/agent-files" target="_blank" rel="noopener" class="text-emerald-400 hover:underline">AFP</a> (Agent Files Protocol) — agents and people share files across hosts by reference, through S3-compatible storage.</li>
+                            <li><a href="https://github.com/agentmessaging/agent-device-protocol" target="_blank" rel="noopener" class="text-rose-400 hover:underline">ADP</a> (Agent Device Protocol) — real devices an agent owns and jumps between, active on one at a time. Signed, approved on the device, with no cloud in the middle. New, with the AI Maestro controller in progress.</li>
                         </ul>
                         <p class="mt-3">All four are open standards — you can use them outside AI Maestro. <a href="https://aimaestro.sh/protocols.html" class="text-cyan-400 hover:underline">Read about the protocols →</a></p>
                     </div>
