@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Maestro for companies</title>
+  <meta name="description" content="Open-source orchestration for company agent teams. See the work, keep the decision with a person, and hand your IT team a brief they can evaluate.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="canonical" href="https://getaimaestro.com/business/">
+  <meta name="theme-color" content="#ffffff">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://getaimaestro.com/business/">
+  <meta property="og:title" content="AI Maestro for companies">
+  <meta property="og:description" content="Coordinate company agent work on infrastructure you operate. A preview page. The public homepage is unchanged.">
+  <meta property="og:site_name" content="AI Maestro">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="../favicon.ico">
+  <link rel="preload" href="fonts/figtree.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="stylesheet" href="company.css">
+</head>
+<body data-ab-variant="business" data-ab-exposure="preview-url">
+  <a class="skip" href="#content">Skip to content</a>
+  <p class="preview-note"><span class="wrap">Preview for review. Not the public homepage, and not a running experiment. <a href="/">Current homepage</a></span></p>
+
+  <!-- site-nav-sync: excluded. scripts/sync-nav.py rewrites only root and blog pages. -->
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="#content">
+        <img src="../logo-constellation.svg" alt="" width="22" height="22">
+        AI Maestro
+      </a>
+      <nav aria-label="On this page">
+        <div class="site-nav">
+          <a href="#workflow">Workflow</a>
+          <a href="#adoption">Adoption</a>
+          <a href="#evaluation">Brief</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="content">
+    <section class="hero" aria-labelledby="page-title">
+      <div class="wrap">
+        <h1 id="page-title">Put your AI agents to work together.</h1>
+        <p class="lede">AI Maestro is open-source orchestration for company agent teams. It keeps the request, the handoff, and the decision a person still makes in one place, on infrastructure you operate.</p>
+        <div class="actions">
+          <a class="button" href="#evaluation" data-ab-hook="open-brief" data-ab-intent="engagement">Get the evaluation brief</a>
+          <a class="button button-quiet" href="#workflow" data-ab-hook="see-workflow" data-ab-intent="engagement">See the workflow</a>
+        </div>
+        <p class="quiet-path">An implementer starts in the <a href="https://aimaestro.sh/" data-ab-hook="technical-evaluation" data-ab-intent="secondary">technical docs</a>.</p>
+        <figure class="stage">
+          <img src="media/person-decides.jpg" width="494" height="604" alt="Chat in the Northwind Labs demo. Ada asks which annual-plan discount the pricing page should show, and whether to proceed with a command.">
+          <figcaption>Northwind Labs is AI Maestro’s own demo, and the agents are scripted. Ada is waiting on a person: which discount to show, and whether to proceed. This “needs you” state is how Claude Code surfaces the moment. Codex does not show it in the sidebar. Not a customer result.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section aria-labelledby="job-title">
+      <div class="wrap prose">
+        <h2 id="job-title">The work between the sessions</h2>
+        <p>Companies already have agents doing useful work in separate sessions. Someone still carries the context, chases the exception, and notices which decision is waiting.</p>
+        <p>AI Maestro is the operating layer around that work. It does not replace the agents you run, and it does not turn a company into an autonomous organization. Your IT team, or an adviser, fits it to one workflow.</p>
+      </div>
+    </section>
+
+    <section id="workflow" aria-labelledby="workflow-title">
+      <div class="wrap">
+        <h2 id="workflow-title">How a piece of work moves</h2>
+        <p class="lede">A request arrives, agents keep working, a person decides, and a record remains. That is the job worth adopting.</p>
+        <ol class="steps">
+          <li>
+            <span class="n">1</span>
+            <h3>A concrete request</h3>
+            <p>Someone names the work clearly enough that an agent can start, and clearly enough that a person knows when it is done.</p>
+          </li>
+          <li>
+            <span class="n">2</span>
+            <h3>Agents do the work</h3>
+            <p>The agents you already run keep their own sessions. Related work stays visible, including what is in review.</p>
+          </li>
+          <li>
+            <span class="n">3</span>
+            <h3>A person decides</h3>
+            <p>A question or an approval comes to someone who can answer it. The pause is part of the workflow.</p>
+          </li>
+          <li>
+            <span class="n">4</span>
+            <h3>A record remains</h3>
+            <p>Source, owners, and due date stay on the card, so the next session does not start from a blank page.</p>
+          </li>
+        </ol>
+        <figure class="record">
+          <img src="media/card-record.jpg" width="548" height="888" alt="Task detail for a different Northwind Labs demo card, Stream the invoice export. It shows status, due date, source, subject, and two owners.">
+          <figcaption>A different demo card, “Stream the invoice export,” not the pricing question after someone answered it. It shows the fields a card can hold. Product view, not a completed customer job.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="adoption" aria-labelledby="adoption-title">
+      <div class="wrap">
+        <h2 id="adoption-title">What a company can adopt</h2>
+        <div class="split">
+          <div>
+            <h3>Available now</h3>
+            <p>The core is MIT-licensed software you install on machines you operate: macOS, Linux, or Windows through WSL2. There is no account. Documented options include a local terminal, Docker, a peer mesh across hosts you add, and agents on your own AWS account. Those are your computers, not a hosted AI Maestro service.</p>
+            <p>A remote companion connects to a server you already run. iPhone is on the App Store: 30 days from the first connection, then $19.99 once for 1.x. Android is in beta. That purchase is the app, not a company subscription. <a href="/iphone.html">Companion details</a>.</p>
+          </div>
+          <div>
+            <h3>Planned, not for sale</h3>
+            <p>A managed company platform, which would provision infrastructure and a company app, is unresolved: packaging, isolation, who operates it, and price. There is no signup.</p>
+            <p>Help running AI Maestro on a customer’s own cloud is also a proposal: setup, operations, training, and handover. There is no engagement, service level, partner directory, or certification, and this page does not book it.</p>
+            <p>Household and single-agent use are a later horizon, not this offer.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="costs" aria-labelledby="costs-title">
+      <div class="wrap">
+        <h2 id="costs-title">Three different costs</h2>
+        <div class="costs">
+          <article>
+            <h3>The license</h3>
+            <p>The core is MIT. Free to use, including commercially. The license is not support, an SLA, or a hosted account. <a href="https://github.com/23blocks-OS/ai-maestro/blob/main/LICENSE" data-ab-hook="technical-evaluation" data-ab-intent="secondary">Read it</a>.</p>
+          </article>
+          <article>
+            <h3>The models</h3>
+            <p>Claude Code, Codex, Grok Build, Copilot, and any other model are subscriptions you already pay. If memory is on, its classifier and summarizer are providers you configure. That meter is not an AI Maestro price.</p>
+          </article>
+          <article>
+            <h3>The machines</h3>
+            <p>You pay for the computers or cloud accounts where it runs. The companion app is a separate one-time purchase after the trial.</p>
+          </article>
+        </div>
+        <p class="note">Running the dashboard on your machines is not the same as “nothing leaves the machine.” Model providers still process what you send them, and not every coding agent supports the same approvals. The brief lists what to verify.</p>
+      </div>
+    </section>
+
+    <section id="evaluation" aria-labelledby="evaluation-title">
+      <div class="wrap">
+        <h2 id="evaluation-title">Evaluation brief</h2>
+        <p class="lede">Written so you can forward it. Copy puts the text on your clipboard. Nothing is uploaded.</p>
+        <div class="copy-row">
+          <button type="button" id="copy-brief" data-ab-hook="business-handoff" data-ab-intent="primary">Copy the evaluation brief</button>
+          <p class="copy-hint" id="copy-hint">Or select it. Printing this page includes the links.</p>
+          <p class="visually-hidden" id="copy-status" role="status"></p>
+        </div>
+
+        <article class="brief" id="brief">
+          <h3>Evaluation brief: AI Maestro for one company workflow</h3>
+          <p>Prepared from public product documentation on 7 November 2026. Confirm any detail in the repository before a decision. This brief is not a proposal, a quote, or a service agreement.</p>
+
+          <h3>What it is</h3>
+          <p>AI Maestro’s core is MIT-licensed software a company runs itself. It is a dashboard and orchestration layer for AI agents the company already operates: see their state, keep useful context, pass work between them, and put a question or an approval in front of a person.</p>
+          <p>It is not a hosted account. A managed company platform is planned and is not available. There is no signup.</p>
+
+          <h3>The job to judge</h3>
+          <p>Pick one bounded workflow. Ask whether a person can see the request, see that agents are working, make the decision the workflow still requires, and keep an artifact that records the source and the owners.</p>
+          <p>The page above shows that sequence with screenshots from AI Maestro’s own demo company, Northwind Labs. The agents in that demo are scripted. Treat the pictures as product views, not as a customer outcome.</p>
+
+          <h3>What is available now</h3>
+          <ul>
+            <li>The open-source core, on macOS, Linux, or Windows through WSL2. Install docs: <a href="https://aimaestro.sh/" data-ab-hook="technical-evaluation" data-ab-intent="secondary">https://aimaestro.sh/</a></li>
+            <li>Read the installer before running it: <a href="https://github.com/23blocks-OS/ai-maestro/blob/main/scripts/remote-install.sh" data-ab-hook="technical-evaluation" data-ab-intent="secondary">https://github.com/23blocks-OS/ai-maestro/blob/main/scripts/remote-install.sh</a></li>
+            <li>Windows notes: <a href="https://github.com/23blocks-OS/ai-maestro/blob/main/docs/WINDOWS-INSTALLATION.md" data-ab-hook="technical-evaluation" data-ab-intent="secondary">https://github.com/23blocks-OS/ai-maestro/blob/main/docs/WINDOWS-INSTALLATION.md</a></li>
+            <li>More than one computer: <a href="https://aimaestro.sh/peers.html" data-ab-hook="technical-evaluation" data-ab-intent="secondary">https://aimaestro.sh/peers.html</a></li>
+            <li>Agents on your own AWS account: <a href="https://aimaestro.sh/cloud-aws.html" data-ab-hook="technical-evaluation" data-ab-intent="secondary">https://aimaestro.sh/cloud-aws.html</a></li>
+            <li>A remote companion for a server you run. iPhone is on the App Store: 30 days from the first connection, then $19.99 once for 1.x. Android is in beta. This purchase is not a company subscription. <a href="https://getaimaestro.com/iphone.html">https://getaimaestro.com/iphone.html</a></li>
+          </ul>
+
+          <h3>What an adviser should verify</h3>
+          <ul>
+            <li>Which programs support chat, status, and approvals: <a href="https://github.com/23blocks-OS/ai-maestro/blob/main/docs/AGENT-PROGRAMS.md" data-ab-hook="technical-evaluation" data-ab-intent="secondary">https://github.com/23blocks-OS/ai-maestro/blob/main/docs/AGENT-PROGRAMS.md</a></li>
+            <li>Memory, including provider processing and known limits: <a href="https://aimaestro.sh/memory.html" data-ab-hook="technical-evaluation" data-ab-intent="secondary">https://aimaestro.sh/memory.html</a></li>
+            <li>Checks on external messages: <a href="https://aimaestro.sh/security.html" data-ab-hook="technical-evaluation" data-ab-intent="secondary">https://aimaestro.sh/security.html</a></li>
+            <li>Secrets: <a href="https://github.com/23blocks-OS/ai-maestro/blob/main/docs/SECRETS.md" data-ab-hook="technical-evaluation" data-ab-intent="secondary">https://github.com/23blocks-OS/ai-maestro/blob/main/docs/SECRETS.md</a></li>
+            <li>Security notes in the repository: <a href="https://github.com/23blocks-OS/ai-maestro/blob/main/SECURITY.md" data-ab-hook="technical-evaluation" data-ab-intent="secondary">https://github.com/23blocks-OS/ai-maestro/blob/main/SECURITY.md</a></li>
+            <li>Tasks and the Attention view: <a href="https://github.com/23blocks-OS/ai-maestro/blob/main/docs/TASKS.md" data-ab-hook="technical-evaluation" data-ab-intent="secondary">https://github.com/23blocks-OS/ai-maestro/blob/main/docs/TASKS.md</a></li>
+            <li>Messaging between agents: <a href="https://aimaestro.sh/messaging.html" data-ab-hook="technical-evaluation" data-ab-intent="secondary">https://aimaestro.sh/messaging.html</a></li>
+            <li>Skills. The skills page currently documents fourteen, and they do not all need the same services: <a href="https://aimaestro.sh/skills.html" data-ab-hook="technical-evaluation" data-ab-intent="secondary">https://aimaestro.sh/skills.html</a></li>
+            <li>Open protocols, if the review gets that far. They are not required to judge the workflow: <a href="https://aimaestro.sh/protocols.html" data-ab-hook="technical-evaluation" data-ab-intent="secondary">https://aimaestro.sh/protocols.html</a></li>
+            <li>License: <a href="https://github.com/23blocks-OS/ai-maestro/blob/main/LICENSE" data-ab-hook="technical-evaluation" data-ab-intent="secondary">https://github.com/23blocks-OS/ai-maestro/blob/main/LICENSE</a></li>
+          </ul>
+
+          <h3>Limits to keep in the review</h3>
+          <ul>
+            <li>Self-hosting is not a promise that all data stays on the machine. Model providers, and the memory classifier and summarizer when memory is on, process what you configure them to see.</li>
+            <li>The raw message index is not redacted. Whether recalled memory changes the next action has not been measured.</li>
+            <li>Scanning external messages is not a sandbox and not proof of immunity. Secret scrubbing is not a guarantee.</li>
+            <li>Claude Code, Codex, and Grok Build are not interchangeable. Codex has no sidebar “needs you” signal. Pi does not ask for approval before tool calls. Parts of the Pi and Copilot CLI behavior were checked with fixtures or limited sessions rather than a full live provider for every claim. Other terminal agents do not automatically receive the same chat, status, and approval behavior. OpenClaw is recognized and does not yet have a chat reader, status feed, or approval cards.</li>
+            <li>A device controller is in progress. It is not a finished part of the core.</li>
+            <li>Do not assume corporate single sign-on, role-based access, a compliance certification, a recovery guarantee, or a support agreement. None of those is established here.</li>
+            <li>The core license is free. Agent subscriptions, provider charges, the computers you run, and the companion app are separate costs.</li>
+            <li>Managed company infrastructure and implementation help on a customer’s cloud are planned. They are not offers you can buy from this page.</li>
+          </ul>
+
+          <h3>Install command, after the script has been read</h3>
+          <pre><code>curl -fsSL aimaestro.sh/install | bash</code></pre>
+          <p>The dashboard in a default install opens at <span class="mono">http://localhost:23000</span>. That address is on the machine you installed, not a public service.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <a class="brand" href="#content">
+        <img src="../logo-constellation.svg" alt="" width="22" height="22">
+        AI Maestro
+      </a>
+      <p>Open-source orchestration for company agent teams. The core is MIT licensed. This page is a preview at <span class="mono">/business/</span> and is marked noindex. The public homepage stays at the site root.</p>
+      <div class="footer-links">
+        <a href="/">Current homepage</a>
+        <a href="https://aimaestro.sh/" data-ab-hook="technical-evaluation" data-ab-intent="secondary">Technical docs</a>
+        <a href="https://github.com/23blocks-OS/ai-maestro" data-ab-hook="technical-evaluation" data-ab-intent="secondary">Source repository</a>
+        <a href="/iphone.html">Companion app</a>
+        <a href="README.md">Preview notes</a>
+      </div>
+      <p>AI Maestro is a project of Juan Peláez and 23blocks. The constellation mark is the current logo.</p>
+    </div>
+  </footer>
+  <script src="company.js"></script>
+</body>
+</html>

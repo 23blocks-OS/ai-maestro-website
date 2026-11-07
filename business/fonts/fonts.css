@@ -1,0 +1,10 @@
+/* Figtree, SIL Open Font License, Latin variable file.
+   Self-hosted. This page does not request a font host. */
+
+@font-face {
+  font-family: "Figtree";
+  font-style: normal;
+  font-weight: 300 900;
+  font-display: swap;
+  src: url("figtree.woff2") format("woff2");
+}
