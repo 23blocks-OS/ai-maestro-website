@@ -10,6 +10,8 @@ Static HTML (no build step): each page is a file at the root, with `blog/`, `ima
 
 Edit the HTML, preview with any static server (`python3 -m http.server`), and open a pull request. A merge to `main` goes live in a minute or two. Add new pages to `sitemap.xml`, and new blog posts to `blog/index.html` and `blog/feed.xml`.
 
+The header is the same on every page. Change it in `partials/nav.html`, then run `python3 scripts/sync-nav.py` to write it into every page (`--check` only reports pages that differ). A new page gets it on the next run, as long as it has a `<nav>` element.
+
 Website changes do not need an AI Maestro release. A new docs page goes in the product repo, not here.
 
 ## History

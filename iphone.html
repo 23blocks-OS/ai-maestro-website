@@ -214,33 +214,41 @@
     <nav class="sticky top-0 bg-slate-900/95 backdrop-blur-lg border-b border-slate-800 z-[100]">
         <div class="max-w-7xl mx-auto px-4 md:px-8">
             <div class="flex justify-between items-center py-4">
-                <a href="/" class="flex items-center gap-3 text-white no-underline hover:opacity-80 transition-opacity duration-200">
-                    <img src="logo-constellation.svg" alt="AI Maestro" class="w-8 h-8 md:w-10 md:h-10">
+                <a href="/" class="flex items-center gap-3 text-white no-underline whitespace-nowrap hover:opacity-80 transition-opacity duration-200">
+                    <img src="/logo-constellation.svg" alt="AI Maestro" class="w-8 h-8 md:w-10 md:h-10">
                     <span class="font-display font-bold text-lg md:text-xl tracking-tight">AI MAESTRO</span>
                 </a>
 
                 <!-- Desktop Navigation -->
-                <div class="hidden md:flex gap-8 items-center">
-                    <a href="/#personas" class="text-slate-400 no-underline font-medium hover:text-cyan-400 transition-colors duration-200 text-sm tracking-wide">WHO IT'S FOR</a>
+                <div class="hidden lg:flex gap-7 items-center">
+                    <a href="/#personas" class="text-slate-400 no-underline font-medium hover:text-cyan-400 transition-colors duration-200 text-sm tracking-wide whitespace-nowrap">WHO IT'S FOR</a>
                     <a href="/#features" class="text-slate-400 no-underline font-medium hover:text-cyan-400 transition-colors duration-200 text-sm tracking-wide">FEATURES</a>
-                    <a href="/iphone.html" class="text-cyan-400 no-underline font-medium transition-colors duration-200 text-sm tracking-wide whitespace-nowrap">MOBILE APP</a>
-                    <a href="/ecosystem.html" class="text-slate-400 no-underline font-medium hover:text-cyan-400 transition-colors duration-200 text-sm tracking-wide">ECOSYSTEM</a>
-                    <a href="https://aimaestro.sh/skills.html" class="text-cyan-400 no-underline font-medium transition-colors duration-200 text-sm tracking-wide">SKILLS</a>
-                    <a href="https://aimaestro.sh/protocols.html" class="text-cyan-400 no-underline font-medium transition-colors duration-200 text-sm tracking-wide">PROTOCOLS</a>
+                    <a href="/iphone.html" class="text-slate-400 no-underline font-medium hover:text-cyan-400 transition-colors duration-200 text-sm tracking-wide whitespace-nowrap">MOBILE APP</a>
+                    <div class="relative group">
+                        <a href="/ecosystem.html" class="inline-flex items-center gap-1 text-slate-400 no-underline font-medium group-hover:text-cyan-400 transition-colors duration-200 text-sm tracking-wide" aria-haspopup="true">
+                            ECOSYSTEM
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m6 9 6 6 6-6"/></svg>
+                        </a>
+                        <div class="absolute left-1/2 -translate-x-1/2 top-full pt-3 hidden group-hover:block group-focus-within:block">
+                            <div class="w-72 rounded-lg border border-slate-800 bg-slate-900 shadow-2xl py-2">
+                                <a href="/ecosystem.html" class="block px-4 py-3 no-underline hover:bg-slate-800/60"><span class="block text-white font-semibold text-sm">Overview</span><span class="block text-slate-400 text-xs mt-0.5">How AI Maestro and its pieces fit together</span></a>
+                                <a href="https://aimaestro.sh/skills.html" class="block px-4 py-3 no-underline hover:bg-slate-800/60"><span class="block text-white font-semibold text-sm">Skills</span><span class="block text-slate-400 text-xs mt-0.5">What your agents can do, ready to install</span></a>
+                                <a href="https://aimaestro.sh/protocols.html" class="block px-4 py-3 no-underline hover:bg-slate-800/60"><span class="block text-white font-semibold text-sm">Protocols</span><span class="block text-slate-400 text-xs mt-0.5">Open standards for messages, files and identity</span></a>
+                            </div>
+                        </div>
+                    </div>
                     <a href="/blog/" class="text-slate-400 no-underline font-medium hover:text-cyan-400 transition-colors duration-200 text-sm tracking-wide">BLOG</a>
-                    <a href="https://aimaestro.sh/" class="text-slate-400 no-underline font-medium hover:text-cyan-400 transition-colors duration-200 text-sm tracking-wide">GET STARTED</a>
+                    <a href="https://aimaestro.sh/" class="text-slate-400 no-underline font-medium hover:text-cyan-400 transition-colors duration-200 text-sm tracking-wide whitespace-nowrap">GET STARTED</a>
                     <a href="https://github.com/23blocks-OS/ai-maestro" target="_blank" class="text-slate-400 no-underline hover:text-cyan-400 transition-colors duration-200" title="View on GitHub">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/></svg>
                     </a>
-                    <a href="https://apps.apple.com/us/app/id6823011943" class="px-5 py-3 rounded-lg bg-cyan-400 text-slate-900 font-bold hover:bg-cyan-300 transition-colors whitespace-nowrap">Get the app</a>
-                    <a href="https://github.com/23blocks-OS/ai-maestro#readme" class="inline-flex items-center gap-2 px-5 py-2.5 rounded bg-cyan-500 text-slate-900 font-bold text-sm tracking-wide hover:bg-cyan-400 transition-all duration-200" target="_blank">
+                    <a href="https://github.com/23blocks-OS/ai-maestro#readme" class="inline-flex items-center gap-2 px-5 py-2.5 rounded bg-cyan-500 text-slate-900 font-bold text-sm tracking-wide whitespace-nowrap hover:bg-cyan-400 transition-all duration-200" target="_blank">
                         START FREE
                     </a>
                 </div>
 
                 <!-- Mobile Navigation -->
-                <div class="flex md:hidden items-center gap-3">
-                    <a href="https://apps.apple.com/us/app/id6823011943" class="px-5 py-3 rounded-lg bg-cyan-400 text-slate-900 font-bold hover:bg-cyan-300 transition-colors whitespace-nowrap">Get the app</a>
+                <div class="flex lg:hidden items-center gap-3">
                     <a href="https://github.com/23blocks-OS/ai-maestro#readme" class="px-3 py-2 rounded bg-cyan-500 text-slate-900 font-bold text-xs tracking-wide" target="_blank">START</a>
                     <button class="hamburger bg-transparent border-0 cursor-pointer p-2 flex flex-col gap-1.5 z-[1001]" id="hamburger" aria-label="Toggle menu">
                         <span></span>
@@ -254,14 +262,14 @@
             <div class="mobile-menu hidden absolute top-full left-0 right-0 bg-slate-900 border-b border-slate-800 py-4" id="mobile-menu">
                 <a href="/#personas" class="block px-8 py-3 text-slate-300 no-underline font-medium hover:text-cyan-400 hover:bg-slate-800/50">Who It's For</a>
                 <a href="/#features" class="block px-8 py-3 text-slate-300 no-underline font-medium hover:text-cyan-400 hover:bg-slate-800/50">Features</a>
-                <a href="/iphone.html" class="block px-8 py-3 text-cyan-400 no-underline font-medium hover:bg-slate-800/50">Mobile App</a>
+                <a href="/iphone.html" class="block px-8 py-3 text-slate-300 no-underline font-medium hover:text-cyan-400 hover:bg-slate-800/50">Mobile App</a>
                 <a href="/ecosystem.html" class="block px-8 py-3 text-slate-300 no-underline font-medium hover:text-cyan-400 hover:bg-slate-800/50">Ecosystem</a>
-                <a href="https://aimaestro.sh/skills.html" class="block px-8 py-3 text-cyan-400 no-underline font-medium hover:bg-slate-800/50">Skills</a>
-                <a href="https://aimaestro.sh/protocols.html" class="block px-8 py-3 text-cyan-400 no-underline font-medium hover:bg-slate-800/50">Protocols</a>
+                <a href="https://aimaestro.sh/skills.html" class="block pl-12 pr-8 py-2.5 text-slate-400 text-sm no-underline font-medium hover:text-cyan-400 hover:bg-slate-800/50">Skills</a>
+                <a href="https://aimaestro.sh/protocols.html" class="block pl-12 pr-8 py-2.5 text-slate-400 text-sm no-underline font-medium hover:text-cyan-400 hover:bg-slate-800/50">Protocols</a>
                 <a href="/blog/" class="block px-8 py-3 text-slate-300 no-underline font-medium hover:text-cyan-400 hover:bg-slate-800/50">Blog</a>
                 <a href="https://aimaestro.sh/" class="block px-8 py-3 text-slate-300 no-underline font-medium hover:text-cyan-400 hover:bg-slate-800/50">Get Started</a>
                 <a href="https://github.com/23blocks-OS/ai-maestro" target="_blank" class="flex items-center gap-3 px-8 py-3 text-slate-300 no-underline font-medium hover:text-cyan-400 hover:bg-slate-800/50">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/></svg>
                     GitHub
                 </a>
             </div>
@@ -293,19 +301,19 @@
                 <p class="font-mono text-xs md:text-sm text-cyan-400 tracking-widest mb-6">AI MAESTRO FOR IPHONE AND ANDROID</p>
                 <h1 class="font-display text-4xl md:text-6xl font-bold mb-6 leading-tight">Run your <span class="gradient-text">AI company</span> from your phone</h1>
                 <p class="text-slate-300 text-lg md:text-xl mb-8">Your AI agents have roles, managers and work, and they run on your own computers. The AI Maestro app is your seat as CEO: see who is working and who needs you, decide, and keep the company moving from anywhere.</p>
-                <div class="flex flex-wrap items-center gap-4 mb-6">
-                    <a href="https://apps.apple.com/us/app/id6823011943" class="inline-block p-3" aria-label="Download AI Maestro on the App Store"><img src="images/badges/download-on-the-app-store.svg" alt="Download on the App Store" height="48" style="height:48px;width:auto"></a>
-                    <a href="mailto:support@23blocks.com?subject=Join%20App%20Testing" class="inline-flex items-center gap-3 px-5 py-3 rounded-lg bg-white text-slate-900 font-bold no-underline hover:bg-slate-200 transition-colors" aria-label="Join the Android beta on Google Play">
+                <div class="flex flex-wrap items-center gap-3 mb-6">
+                    <a href="https://apps.apple.com/us/app/id6823011943" class="inline-block" aria-label="Download AI Maestro on the App Store"><img src="images/badges/download-on-the-app-store.svg" alt="Download on the App Store" height="48" style="height:48px;width:auto"></a>
+                    <a href="mailto:support@23blocks.com?subject=Join%20App%20Testing" class="inline-flex items-center gap-2.5 h-12 px-4 rounded-lg bg-white text-slate-900 font-bold no-underline hover:bg-slate-200 transition-colors" aria-label="Join the Android beta on Google Play">
                         <svg width="20" height="22" viewBox="0 0 20 22" fill="currentColor" aria-hidden="true"><path d="M1 .6 11.6 11 1 21.4c-.4-.2-.6-.6-.6-1.1V1.7c0-.5.2-.9.6-1.1zm11.7 11.5 2.9 2.9-12.4 7c-.3.2-.7.2-1 .1zm3.9-5.2 2.6 1.5c.9.5.9 1.8 0 2.3l-2.7 1.5-3.1-3zM3.2.1l12.4 7-2.9 2.8L2.2 0c.3-.1.7-.1 1 .1z"/></svg>
-                        <span><span class="block text-xs font-medium tracking-wide">IN BETA ON</span><span class="block text-lg leading-tight">Google Play</span></span>
+                        <span><span class="block text-[10px] font-medium tracking-wide">IN BETA ON</span><span class="block text-base leading-tight">Google Play</span></span>
                     </a>
                     <a href="https://github.com/23blocks-OS/ai-maestro#readme" target="_blank" class="px-5 py-3 rounded-lg border border-slate-700 text-slate-200 font-semibold hover:border-cyan-400 hover:text-cyan-400 transition-colors">Get AI Maestro (free)</a>
                 </div>
                 <p class="text-slate-400 text-sm">AI Maestro for iPhone (iOS 16 or later) is available on the App Store. Android (7 or later) is in beta: to join, email <a href="mailto:support@23blocks.com?subject=Join%20App%20Testing" class="text-cyan-400">support@23blocks.com</a> with the subject &ldquo;Join App Testing&rdquo;. Needs AI Maestro (free) running on a computer you control.</p>
             </div>
             <div class="flex justify-center gap-4">
-                <img src="images/mobile/02-panel.png" alt="The company side panel: agents grouped by Needs you, Working, Ready and Offline" class="w-1/2 max-w-[260px] rounded-[2rem] border border-slate-700 shadow-2xl" loading="lazy">
-                <img src="images/mobile/01-chat.png" alt="Chat with an agent, with an approval waiting" class="w-1/2 max-w-[260px] rounded-[2rem] border border-slate-700 shadow-2xl mt-12" loading="lazy">
+                <img src="images/mobile/02-panel.png" alt="The company side panel: agents grouped by Needs you, Working, Ready and Offline" class="w-[46%] max-w-[260px] rounded-[1.5rem] md:rounded-[2rem] border border-slate-700 shadow-2xl" loading="lazy">
+                <img src="images/mobile/01-chat.png" alt="Chat with an agent, with an approval waiting" class="w-[46%] max-w-[260px] rounded-[1.5rem] md:rounded-[2rem] border border-slate-700 shadow-2xl mt-12" loading="lazy">
             </div>
         </div>
     </section>
@@ -336,8 +344,8 @@
                 <div class="p-6 rounded-xl border border-slate-800 bg-slate-900/60"><h3 class="font-display text-xl font-bold mb-2">Private by design</h3><p class="text-slate-400">The app talks only to your own AI Maestro servers, on your network or over Tailscale. No account, no analytics, nothing sent to us.</p></div>
             </div>
             <div class="flex justify-center gap-4 mt-12">
-                <img src="images/mobile/03-profile.png" alt="An agent profile: current status, companies and who it reports to" class="w-1/2 max-w-[260px] rounded-[2rem] border border-slate-700 shadow-2xl" loading="lazy">
-                <img src="images/mobile/04-work.png" alt="Work: the cards waiting on you" class="w-1/2 max-w-[260px] rounded-[2rem] border border-slate-700 shadow-2xl" loading="lazy">
+                <img src="images/mobile/03-profile.png" alt="An agent profile: current status, companies and who it reports to" class="w-[46%] max-w-[260px] rounded-[1.5rem] md:rounded-[2rem] border border-slate-700 shadow-2xl" loading="lazy">
+                <img src="images/mobile/04-work.png" alt="Work: the cards waiting on you" class="w-[46%] max-w-[260px] rounded-[1.5rem] md:rounded-[2rem] border border-slate-700 shadow-2xl" loading="lazy">
             </div>
         </div>
     </section>
