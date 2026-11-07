@@ -1,0 +1,18 @@
+{
+  "scope": "/business/ preview only. The public homepage is out of scope.",
+  "northStar": "A near-white page where the product decision is visible in the first screen and the type does the persuading.",
+  "motion": {
+    "scroll": "smooth, disabled under prefers-reduced-motion"
+  },
+  "breakpoints": {
+    "stack": "860px",
+    "header": "640px",
+    "fullButtons": "420px"
+  },
+  "rules": [
+    "No rust, red, beige, or tan.",
+    "No eyebrow above a heading.",
+    "Mono only for the install command.",
+    "The constellation mark is the only chromatic object."
+  ]
+}

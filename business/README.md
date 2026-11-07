@@ -63,4 +63,6 @@ Exposure, if a test is approved later:
 
 ## Type
 
-Source Serif 4, Source Sans 3, and IBM Plex Mono are self-hosted from `business/fonts/` under the SIL Open Font License. License texts are in `business/fonts/licenses/`. Mono is used only for the install command and technical identifiers. The current site’s display face is not used. The constellation mark is the existing logo.
+Figtree is self-hosted from `business/fonts/figtree.woff2` under the SIL Open Font License (`business/fonts/licenses/figtree-OFL.txt`). Headings and body use that one sans. The install command uses the system monospace. The constellation mark is the existing logo.
+
+The product images in `business/media/` are crops of screenshots already in this repository (`images/chat-cards.png`, `images/card-detail.jpg`), from the Northwind Labs demo. They were not generated.
