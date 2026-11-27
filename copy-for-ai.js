@@ -44,7 +44,7 @@ ${mainContent}
 ---
 
 **About AI Maestro:**
-AI Maestro is an open-source dashboard for orchestrating multiple AI coding agents (Claude Code, Codex, Grok Build, Cursor) from one unified interface. Version 0.15.0, MIT License.
+AI Maestro is the open-source container and orchestrator for AI agents. Every agent has a type: Simple (one session of Claude Code, Codex, Grok Build or another terminal agent), Lola (the Lola Framework) or Jarvis (the session plus a cerebellum). MIT License.
 
 **GitHub:** https://github.com/23blocks-OS/ai-maestro
 **Website:** https://getaimaestro.com/

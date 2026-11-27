@@ -12,7 +12,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agent Ecosystem: Build Complete AI Agents | AI Maestro</title>
-    <meta name="description" content="Every AI agent has four dimensions: personality, capabilities, identity and communication. See how AI Maestro, Plugin Builder, AID and AMP build AI teams.">
+    <meta name="description" content="Every AI agent has four dimensions and a type. See how AI Maestro and the open protocols form a common framework, with Simple, Lola and Jarvis agent types on top.">
     <meta name="robots" content="index, follow, max-image-preview:large">
 
     <!-- Open Graph / Facebook -->
@@ -68,7 +68,7 @@
       "@context": "https://schema.org",
       "@type": "TechArticle",
       "headline": "The AI Agent Ecosystem",
-      "description": "How AI Maestro, the Agent Library, Plugin Builder, AID, and AMP work together to build complete AI agent teams.",
+      "description": "How AI Maestro, the Agent Library, Plugin Builder and the open protocols (AMP, AID, ADP, AFP, Agent Actions) work together as a common framework, with agent types (Simple, Lola, Jarvis) on top.",
       "author": {
         "@type": "Person",
         "name": "Juan Pel\u00e1ez",
@@ -462,6 +462,71 @@
         </div>
     </section>
 
+    <!-- The Framework and Agent Types -->
+    <section class="py-16 md:py-24 px-4 md:px-8" id="agent-types">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <p class="font-mono text-xs text-cyan-400 tracking-widest mb-4">THE FRAMEWORK</p>
+                <h2 class="font-display text-3xl md:text-5xl font-bold mb-6">
+                    Agent Types on a <span class="gradient-text">Common Framework</span>
+                </h2>
+                <p class="text-slate-400 text-lg max-w-3xl mx-auto">
+                    AI Maestro is the container and orchestrator. With the open protocols, it is a common framework agents run on. Simple and Lola agents need only the protocols, so another container could run them too. A Jarvis agent's parts run inside AI Maestro today.
+                </p>
+            </div>
+
+            <div class="max-w-5xl mx-auto space-y-4">
+                <!-- Layer: types -->
+                <div class="bg-slate-850 border border-slate-800 rounded-2xl p-6 md:p-8">
+                    <p class="font-mono text-xs text-slate-500 tracking-widest mb-2">AGENT TYPES</p>
+                    <p class="text-slate-400 text-sm mb-6">A type is skills plus composition. Skills shape how the agent's one session works. Composition adds parts that run beside the session, on their own models, working together.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                        <div class="bg-slate-900 rounded-xl p-5">
+                            <h3 class="font-display text-lg font-bold text-white mb-1">Simple</h3>
+                            <p class="font-mono text-xs text-cyan-400 mb-3">DEFAULT</p>
+                            <p class="text-slate-400 text-sm">One session, any program: Claude Code, Codex or Grok Build.</p>
+                        </div>
+                        <a href="https://github.com/23blocks-OS/lolabot" target="_blank" class="block bg-slate-900 rounded-xl p-5 no-underline hover:bg-slate-800 transition-colors">
+                            <h3 class="font-display text-lg font-bold text-white mb-1">Lola</h3>
+                            <p class="font-mono text-xs text-rose-400 mb-3">SKILLS</p>
+                            <p class="text-slate-400 text-sm">The open-source Lola Framework (lolabot): a brain folder, memory and working habits.</p>
+                        </a>
+                        <div class="bg-slate-900 rounded-xl p-5">
+                            <h3 class="font-display text-lg font-bold text-white mb-1">Jarvis</h3>
+                            <p class="font-mono text-xs text-purple-400 mb-3">SKILLS + COMPOSITION, PRIVATE BETA</p>
+                            <p class="text-slate-400 text-sm">The session plus a cerebellum: a fast voice that talks, looks and listens at the agent's devices, and hands real work to the agent.</p>
+                        </div>
+                        <div class="bg-slate-900/40 border border-dashed border-slate-700 rounded-xl p-5">
+                            <h3 class="font-display text-lg font-bold text-slate-300 mb-1">Your Own</h3>
+                            <p class="font-mono text-xs text-amber-400 mb-3">COMING</p>
+                            <p class="text-slate-400 text-sm">Build a type in a git repo, on top of another type if you like. Create, share or sell it.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Layer: container -->
+                <div class="bg-slate-850 border border-cyan-400/30 rounded-2xl p-6 md:p-8">
+                    <p class="font-mono text-xs text-slate-500 tracking-widest mb-2">THE CONTAINER</p>
+                    <h3 class="font-display text-xl font-bold text-white mb-2">AI Maestro</h3>
+                    <p class="text-slate-400 text-sm">Runs and orchestrates the agents: dashboard, memory, multi-machine mesh.</p>
+                </div>
+
+                <!-- Layer: protocols -->
+                <div class="bg-slate-850 border border-slate-800 rounded-2xl p-6 md:p-8">
+                    <p class="font-mono text-xs text-slate-500 tracking-widest mb-4">THE OPEN PROTOCOLS</p>
+                    <div class="flex flex-wrap gap-2">
+                        <a href="https://agentmessaging.org" target="_blank" rel="noopener" class="px-3 py-1.5 bg-purple-400/10 text-purple-300 border border-purple-400/30 rounded-full text-xs font-mono no-underline">AMP messaging</a>
+                        <a href="https://agentids.org" target="_blank" rel="noopener" class="px-3 py-1.5 bg-green-400/10 text-green-300 border border-green-400/30 rounded-full text-xs font-mono no-underline">AID identity</a>
+                        <a href="https://agentdevices.org" target="_blank" rel="noopener" class="px-3 py-1.5 bg-rose-400/10 text-rose-300 border border-rose-400/30 rounded-full text-xs font-mono no-underline">ADP devices</a>
+                        <a href="https://github.com/agentmessaging/agent-files" target="_blank" rel="noopener" class="px-3 py-1.5 bg-teal-400/10 text-teal-300 border border-teal-400/30 rounded-full text-xs font-mono no-underline">AFP files</a>
+                        <a href="https://agentactions.org" target="_blank" rel="noopener" class="px-3 py-1.5 bg-emerald-400/10 text-emerald-300 border border-emerald-400/30 rounded-full text-xs font-mono no-underline">Agent Actions pages</a>
+                    </div>
+                    <p class="text-slate-500 text-xs mt-4">Coming: types that run on any container that speaks these protocols.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Build Your First Agent Team -->
     <section class="py-16 md:py-24 px-4 md:px-8" id="build">
         <div class="max-w-7xl mx-auto">
@@ -511,7 +576,7 @@
                 <div class="step-card bg-slate-850 border border-slate-800 rounded-2xl p-6">
                     <div class="font-mono text-xs text-purple-400 mb-3">STEP 4</div>
                     <h3 class="font-display text-lg font-bold text-white mb-2">Deploy Lola</h3>
-                    <p class="text-slate-400 text-sm mb-4">Your batteries-included Chief of Staff. Email, memory, tasks, content security out of the box.</p>
+                    <p class="text-slate-400 text-sm mb-4">A Lola agent: your Chief of Staff on the Lola Framework. Email, memory, tasks and content security out of the box.</p>
                     <div class="bg-slate-900 rounded-lg p-3">
                         <code class="font-mono text-xs text-purple-400">git clone github.com/23blocks-OS/lolabot.git</code>
                     </div>
@@ -552,7 +617,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
                 <a href="https://github.com/23blocks-OS/ai-maestro" target="_blank" class="block bg-slate-850 border border-slate-800 rounded-xl p-6 no-underline hover:border-cyan-400/30 transition-colors">
                     <h3 class="font-display text-lg font-bold text-white mb-2">AI Maestro</h3>
-                    <p class="text-slate-400 text-sm">The OS for AI-first organizations. Dashboard, memory, multi-machine mesh.</p>
+                    <p class="text-slate-400 text-sm">The OS for AI-first organizations. The container and orchestrator for every agent type: dashboard, memory, multi-machine mesh.</p>
                 </a>
                 <a href="https://github.com/msitarzewski/agency-agents" target="_blank" class="block bg-slate-850 border border-slate-800 rounded-xl p-6 no-underline hover:border-amber-400/30 transition-colors">
                     <h3 class="font-display text-lg font-bold text-white mb-2">Agent Library</h3>
@@ -564,7 +629,7 @@
                 </a>
                 <a href="https://github.com/23blocks-OS/lolabot" target="_blank" class="block bg-slate-850 border border-slate-800 rounded-xl p-6 no-underline hover:border-purple-400/30 transition-colors">
                     <h3 class="font-display text-lg font-bold text-white mb-2">LolaBot</h3>
-                    <p class="text-slate-400 text-sm">Your first hire. AI Chief of Staff with email, memory, tasks. Pre-built templates at <span class="text-rose-400">lolabots.com</span>.</p>
+                    <p class="text-slate-400 text-sm">Your first hire. The Lola Framework behind the Lola agent type: AI Chief of Staff with email, memory, tasks. Pre-built templates at <span class="text-rose-400">lolabots.com</span>.</p>
                 </a>
                 <a href="https://agentmessaging.org" target="_blank" class="block bg-slate-850 border border-slate-800 rounded-xl p-6 no-underline hover:border-purple-400/30 transition-colors">
                     <h3 class="font-display text-lg font-bold text-white mb-2">AMP</h3>

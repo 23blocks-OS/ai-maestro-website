@@ -1,7 +1,7 @@
 {
   "name": "AI Maestro",
   "short_name": "AI Maestro",
-  "description": "Orchestrate your AI coding agents in a unified dashboard. Manage multiple Claude Code sessions with real-time terminal streaming and agent-to-agent communication.",
+  "description": "The container and orchestrator for AI agents of every type: Simple, Lola and Jarvis. Real-time terminals and agent-to-agent communication, on one machine or many.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#0f172a",
