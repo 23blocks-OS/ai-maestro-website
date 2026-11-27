@@ -173,6 +173,8 @@
         body {
             background-color: #0f172a;
             color: #e2e8f0;
+            /* the glow circles reach past the screen edge on phones; clip keeps the sticky nav working */
+            overflow-x: clip;
         }
 
         /* Noise texture overlay */
@@ -593,7 +595,7 @@
                     <span class="font-mono text-cyan-400 text-sm tracking-wide">AGENT TYPES</span>
                 </div>
                 <h2 class="font-display text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-4">Every Agent Has a Type</h2>
-                <p class="text-xl text-slate-400 max-w-3xl mx-auto mb-4">AI Maestro is the container and orchestrator for agents. With the open protocols, it is a common framework agents run on. Any container that implements the protocols can run the same agents.</p>
+                <p class="text-xl text-slate-400 max-w-3xl mx-auto mb-4">AI Maestro is the container and orchestrator for agents. With the open protocols, it is a common framework agents run on. Simple and Lola agents need only the protocols, so another container could run them too. A Jarvis agent's parts run inside AI Maestro today.</p>
                 <p class="text-slate-400 max-w-3xl mx-auto">A type is skills plus composition. Skills shape how the agent's one session works. Composition adds parts that run beside the session, on their own models, working together.</p>
             </div>
 
@@ -620,7 +622,7 @@
                 <div class="group bg-slate-900/80 border border-slate-700 rounded-xl p-6 hover:border-purple-500/50 hover:bg-slate-900 transition-all duration-300">
                     <div class="flex items-center justify-between mb-4">
                         <h3 class="font-display text-2xl font-bold text-white group-hover:text-purple-400 transition-colors">Jarvis</h3>
-                        <span class="font-mono text-xs text-purple-400">COMPOSED</span>
+                        <span class="font-mono text-xs text-purple-400">PRIVATE BETA</span>
                     </div>
                     <p class="text-slate-400 text-sm leading-relaxed mb-4">The session plus a cerebellum: a fast voice that talks, looks and listens at the agent's devices, and hands real work to the agent.</p>
                     <span class="px-3 py-1.5 bg-purple-500/10 text-purple-300 border border-purple-500/30 rounded-full text-xs font-mono">skills + composition</span>
@@ -631,7 +633,7 @@
                         <h3 class="font-display text-2xl font-bold text-slate-300">Your Own</h3>
                         <span class="font-mono text-xs text-amber-400">COMING</span>
                     </div>
-                    <p class="text-slate-400 text-sm leading-relaxed">Build your own agent type in a git repo. A type can build on another one. Create, share or sell types, and run them on any container that speaks the protocols.</p>
+                    <p class="text-slate-400 text-sm leading-relaxed">Build your own agent type in a git repo. A type can build on another one. Create, share or sell types, and run them on AI Maestro.</p>
                 </div>
             </div>
 
@@ -646,7 +648,6 @@
                     <a href="https://github.com/agentmessaging/agent-files" target="_blank" rel="noopener" class="text-cyan-400 hover:underline">AFP</a> files ·
                     <a href="https://agentactions.org" target="_blank" rel="noopener" class="text-cyan-400 hover:underline">Agent Actions</a> pages
                 </p>
-                <p class="text-slate-500 text-xs mt-3">You choose the type when you create an agent. For now the choice is an experiment: turn on Jarvis agent support in Settings.</p>
             </div>
         </div>
     </section>
@@ -1614,7 +1615,7 @@
                         <img src="logo-constellation.svg" alt="AI Maestro" class="w-8 h-8">
                         <span class="font-display font-bold text-lg text-white">AI MAESTRO</span>
                     </div>
-                    <p class="text-slate-400 text-sm">The future of work is here. Orchestrate multiple AI coding agents from one dashboard.</p>
+                    <p class="text-slate-400 text-sm">The future of work is here. Orchestrate AI agents of every type from one dashboard.</p>
                 </div>
                 <div>
                     <h3 class="font-mono text-xs text-slate-500 tracking-widest mb-4">LINKS</h3>
